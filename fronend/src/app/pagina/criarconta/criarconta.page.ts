@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { RequisicaoService } from 'src/app/requisicao.service';
 
@@ -7,22 +8,32 @@ import { RequisicaoService } from 'src/app/requisicao.service';
   styleUrls: ['./criarconta.page.scss'],
 })
 export class CriarcontaPage implements OnInit {
-  public cpf:string = '';
+
   constructor(
-    public requisicao_service:RequisicaoService
+    public requisicaoservice: RequisicaoService,
+    public router: Router
   ) { }
 
   ngOnInit() {
   }
 
   cadastrar(){
-    this.requisicao_service.cadastrar({
-      cpf:this.cpf,
-      nome:'Edilson Bitencourt',
-      data_nascimento:'',
-      celular:'',
+    this.requisicaoservice.cadastrar({
+      nome:'',
       email:'',
-      senha:''
-    }).subscribe();
+      senha:'',
+      datanasc:'',
+      celular:'',
+      cep:''
+    }).subscribe(
+      (response: any) => {
+        if (response.status === 'sucesso'){
+          this.router.navigate(['/criarconta2']);
+        }else{
+          // Exibir mensagem de erro.
+        }
+      }
+    );
   }
+
 }

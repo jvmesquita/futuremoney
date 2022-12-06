@@ -58,7 +58,19 @@ const routes: Routes = [
   {
     path: 'ajuda',
     loadChildren: () => import('./menu/ajuda/ajuda.module').then( m => m.AjudaPageModule)
+  },  {
+    path: 'criarplano',
+    loadChildren: () => import('./home/criarplano/criarplano.module').then( m => m.CriarplanoPageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./criarplano/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'criarplano',
+    loadChildren: () => import('./pagina/criarplano/criarplano.module').then( m => m.CriarplanoPageModule)
+  },
+
 
 ];
 

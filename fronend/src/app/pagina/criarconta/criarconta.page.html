@@ -3,13 +3,18 @@
   <img src="/assets/future.jpg" class="imagem-principal" />
 
   <ion-item>
-    <ion-label position="floating">CPF</ion-label>
-    <ion-input placeholder="Enter text" [(ngModel)]="cpf"></ion-input>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Endereço</ion-label>
+    <ion-label position="floating">Email</ion-label>
     <ion-input placeholder="Enter text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input type="password"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -28,5 +33,5 @@
   </ion-item>
 
   <div class="ion-padding">
-    <ion-button expand="block" type="submit" class="ion-no-margin" (click)="cadastrar()">Avançar</ion-button>
+    <ion-button expand="block" type="submit" class="ion-no-margin" (click)= "cadastrar()">Avançar</ion-button>
   </div>
