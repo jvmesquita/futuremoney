@@ -7,12 +7,12 @@ import { Injectable } from '@angular/core';
 export class RequisicaoService {
 
   constructor(
-    public http:HttpClient
+    public http: HttpClient
   ) { }
 
-  cadastrar(dados:any){
+  cadastrar(dados: any){
     return this.http.get('http://localhost/futuremoney/backend/cadastro.php',{
       params:dados
     });
   }
-}
+ }
